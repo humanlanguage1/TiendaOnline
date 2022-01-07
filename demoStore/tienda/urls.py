@@ -6,4 +6,5 @@ app_name= 'tienda'
 
 urlpatterns = [
     path('', views.index,  name='index'),
+    path('registro',views.registro, name='registro'),
 ]

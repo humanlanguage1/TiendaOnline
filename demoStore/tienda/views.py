@@ -8,3 +8,6 @@ def index(request):
     print(settings.MEDIA_URL)
     context = {'lstProductos' :lista_productos,'directorio_img':settings.MEDIA_URL}
     return render(request,'index.html',context)
+
+def registro(request):
+    return render(request,'registroCliente.html')
