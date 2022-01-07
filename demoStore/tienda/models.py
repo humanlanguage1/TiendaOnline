@@ -20,10 +20,11 @@ class Producto(models.Model):
             return self.nombre
 
 class Cliente(models.Model):
-      user = models.OneToOneField(User,on_delete=models.RESTRICT)
+      usuario = models.OneToOneField(User,on_delete=models.RESTRICT)
       doc_ide= models.CharField(max_length=200,blank=True)
       direccion = models.CharField(max_length=200,blank=True)
       telefono = models.CharField(max_length=20,blank=True)
 
       def __str__(self):
             return self.usuario.username
+
