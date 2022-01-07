@@ -12,3 +12,4 @@ class ProductoAdmin(admin.ModelAdmin):
     list_ediable= ('categoria','precio','stock')
     search_fields= ['nombre']
 
+    
