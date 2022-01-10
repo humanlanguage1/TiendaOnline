@@ -21,7 +21,7 @@ class Producto(models.Model):
 
 class Cliente(models.Model):
       usuario = models.OneToOneField(User,on_delete=models.RESTRICT)
-      doc_ide= models.CharField(max_length=200,blank=True)
+      doc_ide= models.CharField(max_length=20,blank=True)
       direccion = models.CharField(max_length=200,blank=True)
       telefono = models.CharField(max_length=20,blank=True)
 

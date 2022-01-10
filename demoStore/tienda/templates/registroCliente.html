@@ -1,11 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="container">
-    <h2>Registro de nuevo cliente</h2>
-    <form action="/your-name" method="post">
+    <h2>Registro de nuevo Cliente</h2>
+    <form 
+    action="{% url 'tienda:registro' %}" 
+    method="post">
         {% csrf_token %}
-        {{frmCliente.as_p   }}
-        <input type="submit" value="Registrarse">
+        {{ frmCliente.as_p }}
+        <input type="submit" 
+        value="Registrarse">
     </form>
-</div
-{%endblock %}
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Categoria, Producto 
+from .models import Categoria, Cliente, Producto 
 
 admin.site.register(Categoria)
 
@@ -12,4 +12,4 @@ class ProductoAdmin(admin.ModelAdmin):
     list_ediable= ('categoria','precio','stock')
     search_fields= ['nombre']
 
-    
+admin.site.register(Cliente)    
