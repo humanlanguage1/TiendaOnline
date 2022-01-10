@@ -9,3 +9,7 @@ class ClienteForm(forms.Form):
     telefono = forms.CharField(max_length=20,required=False)
     usuario = forms.CharField(max_length=20,required=True)
     clave = forms.CharField(widget= forms.PasswordInput)
+
+class UsuarioForm(forms.Form):
+    usuario = forms.CharField(max_length=20,required=True)
+    clave = forms.CharField(widget=forms.PasswordInput)

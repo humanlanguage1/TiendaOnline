@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h2>Bienvenido(a) : {{ request.user.first_name  }} - {{ request.user.last_name  }}</h2>
+</div>
+{% endblock %}

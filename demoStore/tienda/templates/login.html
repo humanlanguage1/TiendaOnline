@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    {% if error %}
+        <p class="alert alert-danger">{{ error }}</p>
+    {% endif%}
+    <h2>LOGIN DE USUARIO</h2>
+    {{ form.non_field_errors }}
+    <form method="POST" action="{% url 'tienda:login' %}">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            {{ form.usuario.errors }}
+            <label for="{{ form.usuario.id_for_label }}">Usuario:</label>
+            {{ form.usuario }}
+        </div>
+        <div class="form-group">
+            {{ form.clave.errors }}
+            <label for="{{ form.clave.id_for_label }}">Password:</label>
+            {{ form.clave }}
+        </div>
+    
+    
+        <button class="btn btn-primary btn-block mt-5" type="submit">LOGIN</button>
+    
+    </form>
+</div>
+{% endblock %}
