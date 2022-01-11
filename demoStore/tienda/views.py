@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from django.conf import settings
+
+from tienda.carrito import Cart
 from .models import Producto,Cliente
 from .forms import ClienteForm, UsuarioForm
 from django.contrib.auth.models import User
@@ -72,3 +74,36 @@ def loginUsuario(request):
         'form':frmUsuario
     }
     return render(request,'login.html',context)
+
+def producto(request,producto_id):
+    objProducto = Producto.objects.get(id=producto_id) 
+
+    context = {
+        "producto":objProducto,
+        "directorio_img": settings.MEDIA_URL
+    }
+    return render(request,'producto.html',context)
+
+def agregarCarrito(request,producto_id):
+    objProducto = Producto.objects.get(id=producto_id)
+    carritoProducto = Cart(request)
+    carritoProducto.add(objProducto,1)
+    print(request.session.get("cart"))
+    return render(request,'carrito.html')
+
+def eliminarProductoCarrito(request,producto_id):
+    objProducto = Producto.objects.get(id=producto_id)
+    carritoProducto = Cart(request)
+    carritoProducto.remove(objProducto)
+    print(request.session.get("cart"))
+    return render(request,'carrito.html')
+
+def limpiarCarrito(request):
+    CarritoProducto = Cart(request)
+    CarritoProducto.clear()
+    print(request.session.get("cart"))
+    return render(request,'carrito.html')
+
+def carrito(request):
+    print(request.session.get("cart"))
+    return render(request,'carrito.html')

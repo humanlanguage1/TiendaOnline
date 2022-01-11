@@ -13,7 +13,7 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=200)
     precio = models.DecimalField(max_digits=6,decimal_places=2)
     stock = models.IntegerField(default=0)
-    pub_date = models.DateTimeField("'fecha registro")
+    pub_date = models.DateTimeField("fecha registro")
     imagen = models.ImageField(upload_to='productos', blank=True, null=True)
     
     def __str__(self):
