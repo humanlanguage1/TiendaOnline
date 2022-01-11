@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="container px-3 my-5 clearfix">
-    <!-- Shopping cart table -->
+
     <div class="card">
         <div class="card-header">
             <h2>Carrito de Compras</h2>
@@ -11,7 +11,7 @@
               <table class="table table-bordered m-0">
                 <thead>
                   <tr>
-                    <!-- Set columns width -->
+
                     <th class="text-center py-3 px-4" style="min-width: 400px;">Producto</th>
                     <th class="text-right py-3 px-4" style="width: 100px;">Precio</th>
                     <th class="text-center py-3 px-4" style="width: 120px;">Cantidad</th>
@@ -39,8 +39,7 @@
                 </tbody>
               </table>
             </div>
-                
-            <!-- / Shopping cart table -->     
+  
             <div class="float-right">
               <a class="btn btn-primary" href="{% url 'tienda:index' %}" role="button">REGRESAR</a>
               <a class="btn btn-primary" href="{% url 'tienda:limpiarCarrito' %}" role="button">LIMPIAR</a>
