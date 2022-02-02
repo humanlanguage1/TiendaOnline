@@ -79,8 +79,7 @@ def producto(request,producto_id):
     objProducto = Producto.objects.get(id=producto_id) 
 
     context = {
-        "producto":objProducto,
-        "directorio_img": settings.MEDIA_URL
+        "producto":objProducto
     }
     return render(request,'producto.html',context)
 
