@@ -17,7 +17,7 @@ node{
     }
 
     // Start the app
-    stage ('Test'){
-    sh 'python34 manage.py test --keepdb'   
+    stage ('Start App'){
+    sh 'python manage.py runserver'   
     }
 }
